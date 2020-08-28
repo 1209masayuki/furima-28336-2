@@ -5,6 +5,6 @@ FactoryBot.define do
     city          {Gimei.address.city.to_s}
     addresses     {Gimei.address.town.to_s}
     building      {Faker::Lorem.word}
-    phone_num     {Faker::Number.leading_zero_number(digits: 11)} 
+    phone_num     {"09012345678"}
   end
 end
