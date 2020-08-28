@@ -1,16 +1,12 @@
 class ApplicationController < ActionController::Base
-  # before_action :authenticate_user!
+
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # def create
-  #   @user = User.new(configure_permitted_parameters)
-  #   if @user.valid?
-  #    @user.save
-  #   return redirect_to root_path
-  #   else
-  #    render "registrations/new"
-  #   end
-  #  end
+  
+
+
+  
 
   protected
 

@@ -6,8 +6,8 @@ class User < ApplicationRecord
   has_many :items
   has_many :purchases
 
-  zenkaku = "/\A[ぁ-んァ-ン一-龥]/"
-  zenkaku_kana = "/\A[ァ-ヶー－]+\z/"
+  zenkaku = /\A[ぁ-んァ-ン一-龥]/
+  zenkaku_kana = /\A[ァ-ヶー－]+\z/
   validates :birth_date, presence: true
   with_options presence: true do
     validates :nickname, length: { maximum: 40 }
