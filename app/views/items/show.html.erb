@@ -24,7 +24,7 @@
         (税込) 送料込み
       </span>
     </div>
-    <%# <% unless @item.purchase %> 
+    <%# <% unless @item.purchase %> <%#ここ>
       <% if user_signed_in? && current_user.id == @item.user_id %>
         <%= link_to '商品の編集', edit_item_path(@item.id), class: "item-red-btn" %>
         <p class='or-text'>or</p>

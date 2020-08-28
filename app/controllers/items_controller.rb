@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
     end
   end
 
+  # ここ
   def destroy
     item = Item.find(params[:id])
     return redirect_to action: :index if item.destroy
