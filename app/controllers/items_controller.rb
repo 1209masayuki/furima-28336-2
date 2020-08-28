@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
 
   def destroy
     return redirect_to action: :index if @item.destroy 
-    end
   end
 
   def index
