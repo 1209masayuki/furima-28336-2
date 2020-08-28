@@ -15,9 +15,7 @@ const pay = () => {
       exp_month: formData.get("buyer_purchase[exp_month]"),
       exp_year: `20${formData.get("buyer_purchase[exp_year]")}`,
     };
-    console.log(card)
     Payjp.createToken(card, (status, response) => {
-        console.log(card)
       if (status === 200) {
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
@@ -32,17 +30,9 @@ const pay = () => {
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();
       } else {
-          console.log(response.error);
-          // location.href = "/items/#{@item.id}/buyers" ;
-          // console.log(location)
-        //  redirect_to action: :index
-        // render "index"
       }
       form.commit.disabled = false;
     });
-    
   });
-  
 };
-
 window.addEventListener("load", pay);
