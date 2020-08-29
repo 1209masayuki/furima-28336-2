@@ -12,6 +12,14 @@ class ItemsController < ApplicationController
     return redirect_to action: :index if @item.destroy 
   end
 
+  def update  
+    if @item.update(item_params)
+      redirect_to action: :show
+    else
+      render 'edit'
+    end
+  end
+
   def index
     @items = Item.all.order('created_at DESC')
   end
@@ -27,14 +35,6 @@ class ItemsController < ApplicationController
       redirect_to action: :index
     else
       render 'new'
-    end
-  end
-
-  def update  
-    if @item.update(item_params)
-      redirect_to action: :show
-    else
-      render 'edit'
     end
   end
 
